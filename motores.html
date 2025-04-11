@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motores y Equipo - Ingeniería de Servicios y Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .motor-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark);
+            color: var(--light);
+        }
+
+        .motor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .motor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .motor-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .motor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .motor-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .motor-content {
+            padding: 1.5rem;
+        }
+
+        .motor-title {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .motor-description {
+            color: var(--light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .motor-specs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .motor-specs li {
+            color: var(--light);
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .motor-specs li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 992px) {
+            .motor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .motor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .motor-hero {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                       url('https://images.unsplash.com/photo-1581092160562-40aa08e78837') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .motor-hero h1 {
+            color: var(--primary);
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .motor-list-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: var(--dark);
+            border-radius: 15px;
+        }
+
+        .motor-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .motor-list li {
+            background-color: var(--secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: var(--light);
+            position: relative;
+            padding-left: 2.5rem;
+            transition: transform 0.3s;
+        }
+
+        .motor-list li:hover {
+            transform: translateX(10px);
+            background-color: var(--accent);
+        }
+
+        .motor-list li::before {
+            content: "→";
+            color: var(--primary);
+            position: absolute;
+            left: 1rem;
+            font-weight: bold;
+        }
+
+        .equipment-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .equipment-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .equipment-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .equipment-icon i {
+            padding: 1rem;
+            background: var(--dark);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .equipment-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .equipment-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            color: var(--light);
+        }
+
+        .equipment-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .equipment-list li::before {
+            content: "→";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ISC</div>
+            <div class="nav-links">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="motores.html">Motores y Equipo</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="motor-hero">
+        <h1>Motores Eléctricos</h1>
+    </section>
+
+    <div class="motor-list-container">
+        <ul class="motor-list">
+            <li>Motores Trifásicos</li>
+            <li>Motores Trifásicos de Uso Severo</li>
+            <li>Motores Monofásicos</li>
+            <li>Motores para Aplicaciones Especiales</li>
+            <li>Motores Nema D</li>
+            <li>Motores a Prueba de Explosión</li>
+            <li>Motores IEEE-841 Nema Premium</li>
+            <li>Motores de Media y Alta Tensión</li>
+            <li>Repuestos para Motores Trifásicos</li>
+            <li>Repuestos para Motores Monofásicos</li>
+            <li>Ventiladores Axiales Industriales</li>
+            <li>Repuestos para Ventiladores</li>
+            <li>Motores Reductores</li>
+            <li>Servo Motores</li>
+            <li>Bombas Sumergibles</li>
+        </ul>
+    </div>
+
+    <main>
+        <h1 class="page-title" style="color: var(--primary); text-align: center; margin: 2rem 0; font-size: 2.5rem;">Equipos</h1>
+        
+        <section class="equipment-section">
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="equipment-title">Variadores y Arrancadores</h3>
+                    <ul class="equipment-list">
+                        <li><a href="https://www.inversoresycontroles.com/delta-vfd-e-ficha-tecnica/" target="_blank" style="color: var(--light); text-decoration: none;">Variadores Electrónicos de Velocidad</a></li>
+                        <li>Arrancadores Electrónicos Suaves</li>
+                        <li>Arrancadores Estrella Triángulo</li>
+                        <li>Inversores de Giro</li>
+                    </ul>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="equipment-title">Potencia y Distribución</h3>
+                    <ul class="equipment-list">
+                        <li>Contactores y Relés</li>
+                        <li>Guardamotores</li>
+                        <li>Transferencias Automáticas</li>
+                        <li>Protecciones Eléctricas</li>
+                    </ul>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="equipment-title">Automatización</h3>
+                    <ul class="equipment-list">
+                        <li>PLCs y Software</li>
+                        <li>Interfaces HMI</li>
+                        <li>Sensores y Detectores</li>
+                        <li>Sistemas RFID</li>
+                    </ul>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="equipment-title">Equipos de Medida</h3>
+                    <ul class="equipment-list">
+                        <li>Analizadores de Redes</li>
+                        <li>Multímetros Digitales</li>
+                        <li>Osciloscopios</li>
+                        <li>Medidores Variables</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="index.html#contacto" class="cta-button">COTIZAR</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <p><i class="far fa-envelope"></i> gerencia@insercontrol.com</p>
+            <p><i class="fas fa-phone"></i> +57 310 6317009 - 605 309 1113</p>
+            <p><i class="fas fa-map-marker-alt"></i> Calle 77 # 65 – 37, Country Office Center. Of. 129</p>
+        </div>
+        <p>Diseño y desarrollo de soluciones eléctricas y de automatización industrial</p>
+        <p>© 2025 Ingeniería de Servicios y Control. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

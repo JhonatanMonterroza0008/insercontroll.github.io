@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Ingeniería de Servicios y Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .services-page {
+            padding-top: 80px;
+        }
+        
+        .service-section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .service-section:nth-child(odd) {
+            background-color: var(--dark);
+        }
+
+        .service-section:nth-child(even) {
+            background-color: var(--secondary);
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            color: var(--light);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--secondary);
+            border-radius: 15px;
+            margin-top: 4rem;
+        }
+        
+        .specialty-item {
+            background-color: var(--dark);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .specialty-item:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 968px) {
+            .service-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ISC</div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="index.html#aliados">Aliados</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-section">
+            <div class="service-container">
+                <div class="service-content">
+                    <h1 class="section-title">División de Ingeniería Eléctrica</h1>
+                    <p>Consultoría, asesoría, diseños, ingeniería de detalle, administración de proyectos y montajes en media y baja tensión, construcción y mantenimiento de subestaciones eléctricas, sistemas puesta a tierra y apantallamientos.</p>
+                </div>
+                <div class="service-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" alt="Ingeniería Eléctrica" class="service-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-container">
+                <div class="service-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad" alt="Automatización Industrial" class="service-image">
+                </div>
+                <div class="service-content">
+                    <h2 class="section-title">División de Automatización Industrial</h2>
+                    <p>La División de Automatización Industrial se centra en la implementación de soluciones de automatización a medida. Ofrecemos servicios que abarcan desde la concepción del proyecto hasta su ejecución, incluyendo asesoramiento en diseño, montaje y mantenimiento de sistemas de instrumentación y control.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-container">
+                <div class="service-content">
+                    <h2 class="section-title">División de Ingeniería Civil</h2>
+                    <p>Nos dedicamos al desarrollo integral de proyectos de obra civil, abarcando desde la fase de diseño, ingeniería de detalle y planificación, hasta la ejecución final de las construcciones.</p>
+                </div>
+                <div class="service-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da" alt="Ingeniería Civil" class="service-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <div class="service-container">
+                <div class="service-content">
+                    <h2 class="section-title">Nuestras Especialidades</h2>
+                    <div class="specialties-grid">
+                        <div class="specialty-item">Diseño y Planificación de Proyectos</div>
+                        <div class="specialty-item">Construcción y Supervisión</div>
+                        <div class="specialty-item">Gestión de Proyectos</div>
+                        <div class="specialty-item">Consultoría de Ingeniería Civil</div>
+                        <div class="specialty-item">Evaluación y Mitigación de Riesgos</div>
+                        <div class="specialty-item">Servicios de Inspección</div>
+                        <div class="specialty-item">Carpintería Metálica y Madera</div>
+                        <div class="specialty-item">Instalación De Redes Eléctricas, Acueducto Y Alcantarillado</div>
+                        <div class="specialty-item">Desarrollo de Infraestructuras</div>
+                        <div class="specialty-item">Estudios de Viabilidad</div>
+                        <div class="specialty-item">Movimientos de tierras</div>
+                        <div class="specialty-item">Suministro de materiales para la construcción sub base, arena, grava</div>
+                        <div class="specialty-item">Reparaciones Locativas</div>
+                        <div class="specialty-item">Instalación red de acueducto y alcantarillado</div>
+                        <div class="specialty-item">Construcción De Infraestructura Residenciales, Comerciales E Industriales</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <p><i class="far fa-envelope"></i> gerencia@insercontrol.com</p>
+            <p><i class="fas fa-phone"></i> +57 310 6317009 - 605 309 1113</p>
+            <p><i class="fas fa-map-marker-alt"></i> Calle 77 # 65 – 37, Country Office Center. Of. 129</p>
+        </div>
+        <p>Diseño y desarrollo de soluciones eléctricas y de automatización industrial</p>
+        <p>© 2025 Ingeniería de Servicios y Control. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
